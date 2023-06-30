@@ -17,14 +17,23 @@ public class Schach {
 
             while(matt == false){
                 printfigurenOnBoard();
-
+                matt = true;
             }
 
 
         }
-        public static void  printfigurenOnBoard(){
-
+    public static void printfigurenOnBoard() {
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (figuren[i][j] == '\0') {
+                    System.out.print("0\t");
+                } else {
+                    System.out.print(figuren[i][j]+"\t");
+                }
+            }
+            System.out.println();
         }
+    }
         public static void setfiguren(){
             //Schwarze Figuren
             figuren[0][0] = 't';
