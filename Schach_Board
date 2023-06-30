@@ -1,0 +1,56 @@
+public class Schach_Board {
+        public static int row = 8;
+        public static int col = 8;
+        public static int[][] ma = new int [row][col];
+        public static Pad pad = new Pad("Schach");
+
+        public static void main(String[] args) {
+        fillMatrix();
+        printMatrix();
+        padSetup();
+        padOutput();
+    }
+
+    public static void fillMatrix() {
+        int num = 0;
+
+        for (int i = 0; i < ma.length; i++) {
+            for (int j = 0; j < ma[i].length; j++) {
+                if ((i + j) % 2 == 0) {
+                    ma[i][j] = 1;
+                } else {
+                    ma[i][j] = 0;
+                } 
+            }
+        }
+    }
+
+    public static void printMatrix() {
+        for (int i = 0; i < ma.length; i++) {
+            for (int j = 0; j < ma[i].length; j++) {
+                System.out.print(ma[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void padSetup() {
+        pad.setPadSize(row*100, col*100);
+        pad.setVisible(true);
+    }
+
+    public static void padOutput() {
+        for (int i = 0; i < ma.length; i++) {
+         for (int j = 0; j < ma[i].length; j++) {
+            if (ma[i][j] == 1) {
+               pad.setColor(Pad.black);
+               pad.fillRect(j*100, i*100, 100, 100);
+            } else {
+               pad.setColor(Pad.white);
+               pad.fillRect(j*100, i*100, 100, 100);
+            }
+            pad.redraw();
+         }
+      }
+    }
+}
