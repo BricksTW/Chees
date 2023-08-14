@@ -22,7 +22,7 @@ public class Schach {
 
 
     }
-public static void printfigurenOnBoard() {
+/*public static void printfigurenOnBoard() {
     for (int i = 0; i < row; i++) {
         for (int j = 0; j < col; j++) {
             if (figuren[i][j] == '\0') {
@@ -59,7 +59,7 @@ public static void printfigurenOnBoard() {
         }
         System.out.println();
     }
-}
+}*/
     public static void setfiguren(){
         //Schwarze Figuren
         figuren[0][0] = 't';
